@@ -302,43 +302,4 @@ sql.query(sqlquery, (err, res) => {
         });
         
         };
-
-        
-     Customer.delete_bank = (email,bank_id, result) => {
-      let sqlquery="SELECT *,user_bank.id as bid FROM users INNER JOIN user_bank ON users.id=user_bank.user_id where users.email='"+`${email}`+"'";
-          
-      sql.query(sqlquery, (err, res) => {  
-      if (Array.isArray(res) && res.length) {
-
-              let my_user_id = res[0].user_id; 
-              let my_bank_id= bank_id;
-      console.log("Email found");
-             
-        sql_userbank = "delete from user_bank where user_id="+`${my_user_id}`+" and id="+`${my_bank_id}`; 
-     
-      sql.query(sql_userbank, function (err, resvv) {
-        console.log("sql: ",sql_userbank);
-        if(resvv.affectedRows>0){
-         console.log("Bank Details deleted: ",resvv);
-         //console.log("created customer: ",resvv);
-         //result(null,{ status:200, message:"Bank Details added ",  data:resvv });
-        result(null,{ status:200, message:"Bank Details deleted "});
-        }
-        else{
-          console.log("Bank Details not deleted, bankid not found : ",resvv);
-        result(null,{ status:400, message:"Bank Details not deleted, bankid not found."});
-       }
-      });
-      
-       
-          }
-            else{   
-              console.log("Email not found"); 
-             console.log(sqlquery)
-             result(null,{ status:400, message:"Email not found"}); 
-          }  
-        });
-        
-        };
-
 module.exports = Customer;
