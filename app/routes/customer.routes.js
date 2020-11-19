@@ -10,5 +10,7 @@ module.exports = app => {
     app.get("/users/:emailId", customers.findOne1users);
     app.get("/getNSEBank", customers.getnsebank);
     app.post("/readFatca1",customers.readFatca1_nov);
-    app.get("/perchase",customers.perchase);//executed with error
+     app.get("/purchase",customers.purchase);//
+    app.get("/purchase_sip",customers.purchase_sip);//
+    app.get("/test",customers.test);//
 };
