@@ -340,3 +340,5 @@ sql.query(sqlquery, (err, res) => {
         });
         
         };
+
+module.exports = Customer;
