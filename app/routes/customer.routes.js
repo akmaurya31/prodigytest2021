@@ -14,5 +14,5 @@ module.exports = app => {
     app.get("/purchase_sip",customers.purchase_sip);//
     app.get("/test",customers.test);//
    app.get("/changePbank",customers.changePbank);
-   //app.get("/deletebank",customers.deletebank);
+   app.get("/deletebank",customers.deletebank);
 };
