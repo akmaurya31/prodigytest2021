@@ -1406,18 +1406,3 @@ console.log("res last line 969");
       });
    }; 
    
-
-   exports.deletebank = (req, res) => {
-    //console.log(linkvar)
-      console.log("")
-      const postarray= { 
-        email:req.body.email,
-        bank_id:req.body.bank_id
-      }
-      Customer.delete_bank(postarray.email,postarray.bank_id,(err, data) => {
-         
-       //res.send(data);
-        return;     
-
-      });
-   }; 
